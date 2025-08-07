@@ -1,3 +1,15 @@
+"""
+The function converts each letter into a binary vector, indicating membership of each character class (\w, \d etc) and one-hot encoded membership of its own character. By slicing the matrices of valid words and finding subsets of the column vectors (substrings) which exist in all valid matrices (strings) 
+and not exist in  every invalid matrix, the algoriuthm can partition the set containing both valid and invalid words perfectly or imperfectly with one subset at a time.
+
+The algorithm then finds optimal combinations of these subsets to obtain a final combination that has the lowest character count.
+
+The algorithm assumes that there exist one or more substring such that it exist in every valid wword and does not exist in every invalid word, or one or more substring that exist in every invalid word and does not exist in any valid word. A substring, or a collection of substrings of this nature, ordered or unordered,
+is sufficient for partitioning the set of all given words such that valid words and invalid words are seperated.
+
+"""
+
+
 import re
 import numpy as np
 
